@@ -328,9 +328,15 @@ Message: ${bookingData.message}`;
             Music
           </h2>
           <div className="relative">
+            {/* Gramophone GIF */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-64 h-64 rounded-full bg-purple-600/10 animate-pulse" />
+              <img
+                src="/gramophone.png" // put your GIF path here
+                alt="Gramophone"
+                className="w-100 h-100 object-contain"
+              />
             </div>
+
             <div className="relative z-10 py-20">
               <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Debut Single
@@ -339,9 +345,9 @@ Message: ${bookingData.message}`;
                 Coming Soon
               </p>
               <div className="mt-8 flex items-center justify-center gap-2">
-                <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-                <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse delay-100" />
-                <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse delay-200" />
+                <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse delay-100" />
+                <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse delay-200" />
               </div>
               <p className="mt-8 text-gray-500 text-sm uppercase tracking-widest">
                 New music loading
