@@ -799,7 +799,7 @@ Message: ${bookingData.message}`;
                 href="https://instagram.com/Gavin_Ginley"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-14 h-14 rounded-full bg-white/5 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+                className="w-9 h-9 rounded-full bg-white/5 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
               >
                 <svg
                   className="w-6 h-6 text-red-500 group-hover:text-white transition-colors"
@@ -815,7 +815,7 @@ Message: ${bookingData.message}`;
                 href="https://open.spotify.com/artist/YOUR_ARTIST_ID"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-14 h-14 rounded-full bg-white/5 hover:bg-green-600 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+                className="w-9 h-9 rounded-full bg-white/5 hover:bg-green-600 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
               >
                 <svg
                   className="w-6 h-6 text-red-500 group-hover:text-white transition-colors"
@@ -831,7 +831,7 @@ Message: ${bookingData.message}`;
                 href="https://music.apple.com/artist/YOUR_ARTIST_ID"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-14 h-14 rounded-full bg-white/5 hover:bg-gradient-to-br hover:from-pink-500 hover:to-red-500 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+                className="w-9 h-9 rounded-full bg-white/5 hover:bg-gradient-to-br hover:from-pink-500 hover:to-red-500 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
               >
                 <svg
                   className="w-6 h-6 text-red-500 group-hover:text-white transition-colors"
@@ -847,7 +847,7 @@ Message: ${bookingData.message}`;
                 href="https://www.tiktok.com/@gavinginley"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-14 h-14 rounded-full bg-white/5 hover:bg-black flex items-center justify-center transition-all duration-300 hover:scale-110 group border border-transparent hover:border-white/20"
+                className="w-9 h-9 rounded-full bg-white/5 hover:bg-black flex items-center justify-center transition-all duration-300 hover:scale-110 group border border-transparent hover:border-white/20"
               >
                 <svg
                   className="w-6 h-6 text-red-500 group-hover:text-white transition-colors"
@@ -863,7 +863,7 @@ Message: ${bookingData.message}`;
                 href="https://www.youtube.com/@GavinGinleyOfficial"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-14 h-14 rounded-full bg-white/5 hover:bg-red-600 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+                className="w-9 h-9 rounded-full bg-white/5 hover:bg-red-600 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
               >
                 <svg
                   className="w-6 h-6 text-red-500 group-hover:text-white transition-colors"
