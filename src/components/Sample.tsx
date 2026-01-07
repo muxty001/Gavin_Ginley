@@ -230,7 +230,7 @@ Message: ${bookingData.message}`;
                   scrollToSection(link.id);
                   setMobileMenuOpen(false);
                 }}
-                className={`satisfy-regular text-left text-sm uppercase tracking-widest ${
+                className={`text-left text-sm uppercase tracking-widest ${
                   activeSection === link.id
                     ? "text-purple-400"
                     : "text-gray-400 hover:text-white"
@@ -627,7 +627,7 @@ Message: ${bookingData.message}`;
       {/* Booking Section */}
       <section id="booking" className="py-32 px-6 bg-[#080808]">
         <div className="max-w-4xl mx-auto text-center">
-          {/* <h2 className="text-sm uppercase tracking-[0.3em] text-purple-400 mb-4">
+          <h2 className="text-sm uppercase tracking-[0.3em] text-purple-400 mb-4">
             Booking
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold mb-6">
@@ -636,51 +636,87 @@ Message: ${bookingData.message}`;
           <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
             For live performances, festivals, private events, brand
             collaborations, and special appearances.
-          </p> */}
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              { title: "Live Shows", desc: "Clubs, concerts & festivals" },
+              {
+                title: "Private Events",
+                desc: "Exclusive & invite-only events",
+              },
+              {
+                title: "Brand Deals",
+                desc: "Creative partnerships & campaigns",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="p-6 bg-white/5 border border-white/10 rounded-lg hover:border-purple-500/30 transition-all duration-300"
+              >
+                <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
+                <p className="text-sm text-gray-400">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* <a
+            href="mailto:management@gavinginley.com"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white font-medium tracking-wider uppercase text-sm transition-all duration-300 rounded-lg hover:scale-105"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+            Book Now
+          </a> */}
 
           <button
             onClick={() => setIsBookingOpen(true)}
             className="inline-flex items-center gap-3 px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white font-medium tracking-wider uppercase text-sm transition-all duration-300 rounded-lg hover:scale-105"
           >
-            Booking
+            Book Now
           </button>
         </div>
       </section>
+
       {isBookingOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center px-4"
           onClick={() => setIsBookingOpen(false)}
         >
-          {/* Modal */}
           <div
-            className="relative w-full max-w-lg rounded-xl border border-white/10 bg-[#0a0a0a] p-8"
+            className="bg-[#0a0a0a] border border-white/10 rounded-xl max-w-lg w-full p-8 relative"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close button */}
             <button
-              type="button"
-              onClick={() => setIsBookingOpen(false)}
               className="absolute top-4 right-4 text-white/60 hover:text-white"
+              onClick={() => setIsBookingOpen(false)}
             >
               ✕
             </button>
 
-            {/* Header */}
-            <h3 className="mb-2 text-2xl font-bold text-white">
-              Booking Request
-            </h3>
-            <p className="mb-6 text-gray-400">
+            <h3 className="text-2xl font-bold mb-2">Booking Request</h3>
+            <p className="text-gray-400 mb-6">
               Fill in the details and management will get back to you.
             </p>
 
-            {/* Form */}
             <form onSubmit={handleBookingSubmit} className="space-y-4">
               <input
                 name="name"
                 required
                 placeholder="Your Name"
                 onChange={handleBookingChange}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white outline-none focus:border-purple-500"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:border-purple-500 outline-none"
               />
 
               <input
@@ -689,29 +725,27 @@ Message: ${bookingData.message}`;
                 required
                 placeholder="Your Email"
                 onChange={handleBookingChange}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white outline-none focus:border-purple-500"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:border-purple-500 outline-none"
               />
 
               <select
                 name="eventType"
                 required
                 onChange={handleBookingChange}
-                className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-4 py-3 text-white outline-none focus:border-purple-500"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:border-purple-500 outline-none"
               >
-                <option value="" className="text-gray-400">
-                  Select Event Type
-                </option>
-                <option className="bg-[#0a0a0a]">Live Show</option>
-                <option className="bg-[#0a0a0a]">Private Event</option>
-                <option className="bg-[#0a0a0a]">Festival</option>
-                <option className="bg-[#0a0a0a]">Brand Collaboration</option>
+                <option value="">Select Event Type</option>
+                <option>Live Show</option>
+                <option>Private Event</option>
+                <option>Festival</option>
+                <option>Brand Collaboration</option>
               </select>
 
               <input
-                type="date"
                 name="date"
+                type="date"
                 onChange={handleBookingChange}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white outline-none focus:border-purple-500"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:border-purple-500 outline-none"
               />
 
               <textarea
@@ -719,12 +753,12 @@ Message: ${bookingData.message}`;
                 rows={4}
                 placeholder="Additional details"
                 onChange={handleBookingChange}
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white outline-none focus:border-purple-500"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:border-purple-500 outline-none"
               />
 
               <button
                 type="submit"
-                className="w-full rounded-lg bg-purple-600 py-4 text-sm font-medium uppercase tracking-wider text-white transition hover:bg-purple-500 hover:scale-[1.02]"
+                className="w-full py-4 bg-purple-600 hover:bg-purple-500 rounded-lg text-white font-medium tracking-wider uppercase transition-all duration-300 hover:scale-[1.02]"
               >
                 Submit Booking
               </button>
@@ -732,6 +766,96 @@ Message: ${bookingData.message}`;
           </div>
         </div>
       )}
+
+      {/* Social Links Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-sm uppercase tracking-[0.3em] text-purple-400 mb-8">
+            Follow
+          </h2>
+          <div className="flex items-center justify-center gap-8">
+            {/* Instagram */}
+            <a
+              href="https://instagram.com/Gavin_Ginley"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-14 h-14 rounded-full bg-white/5 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+            >
+              <svg
+                className="w-6 h-6 text-red-500 group-hover:text-white transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+
+            {/* Spotify */}
+            <a
+              href="https://open.spotify.com/artist/YOUR_ARTIST_ID"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-14 h-14 rounded-full bg-white/5 hover:bg-green-600 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+            >
+              <svg
+                className="w-6 h-6 text-red-500 group-hover:text-white transition-colors"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.478 17.318a.748.748 0 0 1-1.03.248c-2.82-1.724-6.37-2.114-10.547-1.159a.75.75 0 0 1-.335-1.462c4.57-1.045 8.49-.6 11.63 1.32a.75.75 0 0 1 .282 1.053zm1.473-3.279a.936.936 0 0 1-1.287.31c-3.228-1.984-8.148-2.56-11.96-1.404a.938.938 0 0 1-.543-1.795c4.36-1.323 9.772-.684 13.502 1.623a.936.936 0 0 1 .288 1.266zm.127-3.414c-3.87-2.298-10.26-2.51-13.95-1.392a1.125 1.125 0 0 1-.65-2.152c4.24-1.287 11.31-1.04 15.77 1.622a1.125 1.125 0 0 1-1.17 1.922z" />
+              </svg>
+            </a>
+
+            {/* Apple */}
+            <a
+              href="https://music.apple.com/artist/YOUR_ARTIST_ID"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-14 h-14 rounded-full bg-white/5 hover:bg-gradient-to-br hover:from-pink-500 hover:to-red-500 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+            >
+              <svg
+                className="w-6 h-6 text-red-500 group-hover:text-white transition-colors"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M16.365 1.43c-.114-.01-.23.003-.344.034L7.16 3.53A2 2 0 0 0 5.7 5.47v11.33c-.37-.13-.77-.2-1.19-.2-1.93 0-3.5 1.34-3.5 3s1.57 3 3.5 3 3.5-1.34 3.5-3V9.02l7-1.56v7.14c-.37-.13-.77-.2-1.19-.2-1.93 0-3.5 1.34-3.5 3s1.57 3 3.5 3 3.5-1.34 3.5-3V3.43a2 2 0 0 0-1.955-2z" />
+              </svg>
+            </a>
+
+            {/* TikTok */}
+            <a
+              href="https://www.tiktok.com/@gavinginley"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-14 h-14 rounded-full bg-white/5 hover:bg-black flex items-center justify-center transition-all duration-300 hover:scale-110 group border border-transparent hover:border-white/20"
+            >
+              <svg
+                className="w-6 h-6 text-red-500 group-hover:text-white transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+              </svg>
+            </a>
+
+            {/* YouTube */}
+            <a
+              href="https://www.youtube.com/@GavinGinleyOfficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-14 h-14 rounded-full bg-white/5 hover:bg-red-600 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+            >
+              <svg
+                className="w-6 h-6 text-red-500 group-hover:text-white transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-32 px-6 border-t border-white/5">
