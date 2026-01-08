@@ -310,9 +310,12 @@ Message: ${bookingData.message}`;
           <h2 className="text-sm uppercase tracking-[0.3em] text-purple-400 mb-8">
             About
           </h2>
-          <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-gray-200">
-            This comes from somewhere real... 🦅
-          </p>
+          <div className="flex justify-between items-center">
+            <span className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-gray-200">
+              This comes from somewhere real...
+            </span>
+            <img src="/eagle.png" className="" />
+          </div>
           <div className="mt-12 w-24 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto" />
         </div>
       </section>
@@ -706,9 +709,9 @@ Message: ${bookingData.message}`;
                 <option value="" className="text-gray-400">
                   Select Booking Type
                 </option>
-                
+
                 <option className="bg-[#0a0a0a]">Private Appearance</option>
-                
+
                 <option className="bg-[#0a0a0a]">Brand Collaboration</option>
               </select>
 
