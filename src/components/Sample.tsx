@@ -646,7 +646,7 @@ Message: ${bookingData.message}`;
                 desc: "Exclusive & invite-only events",
               },
               {
-                title: "Brand Deals",
+                title: "Brand Deals", 
                 desc: "Creative partnerships & campaigns",
               },
             ].map((item, index) => (

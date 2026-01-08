@@ -311,8 +311,7 @@ Message: ${bookingData.message}`;
             About
           </h2>
           <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-gray-200">
-            An artist forging a new sound at the intersection of raw emotion and
-            sonic innovation. Building something different — something real.
+            This comes from somewhere real... 🦅
           </p>
           <div className="mt-12 w-24 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto" />
         </div>
@@ -705,11 +704,11 @@ Message: ${bookingData.message}`;
                 className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-4 py-3 text-white outline-none focus:border-purple-500"
               >
                 <option value="" className="text-gray-400">
-                  Select Event Type
+                  Select Booking Type
                 </option>
-                <option className="bg-[#0a0a0a]">Live Show</option>
-                <option className="bg-[#0a0a0a]">Private Event</option>
-                <option className="bg-[#0a0a0a]">Festival</option>
+                
+                <option className="bg-[#0a0a0a]">Private Appearance</option>
+                
                 <option className="bg-[#0a0a0a]">Brand Collaboration</option>
               </select>
 
@@ -747,12 +746,12 @@ Message: ${bookingData.message}`;
               <h2 className="text-sm uppercase tracking-[0.3em] text-purple-400 mb-4">
                 Contact
               </h2>
-              <h3 className="text-2xl font-bold mb-4">
+              {/* <h3 className="text-2xl font-bold mb-4">
                 Management & Inquiries
-              </h3>
-              <p className="text-gray-400 mb-6">
+              </h3> */}
+              {/* <p className="text-gray-400 mb-6">
                 For booking, press, and business inquiries.
-              </p>
+              </p> */}
               <a
                 href="mailto:management@gavinginley.com"
                 className="inline-flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
@@ -777,7 +776,7 @@ Message: ${bookingData.message}`;
               <h2 className="text-sm uppercase tracking-[0.3em] text-purple-400 mb-4">
                 Location
               </h2>
-              <h3 className="text-2xl font-bold mb-4">Based Worldwide</h3>
+              <h3 className="text-2xl font-bold mb-4">GLOBAL</h3>
               <p className="text-gray-400">Creating music without borders.</p>
             </div>
           </div>
